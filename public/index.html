@@ -1,43 +1,71 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PureTots - Organic Baby Clothing</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-beige font-sans text-gray-700">
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <!-- Hero Section -->
+  <section class="bg-pastel-green p-8 text-center">
+    <h1 class="text-4xl font-bold text-white">PureTots</h1>
+    <p class="text-xl mt-2 text-white">Soft, Safe & Organic Clothing for Your Little One 🌿</p>
+    <button class="mt-4 bg-white text-pastel-green font-semibold px-6 py-2 rounded-2xl shadow">Shop Now</button>
+  </section>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+  <!-- Our Story -->
+  <section class="p-8 bg-white text-center">
+    <h2 class="text-2xl font-bold mb-2">Why PureTots?</h2>
+    <p class="max-w-xl mx-auto text-gray-600">We use 100% organic cotton with baby-safe dyes to ensure the gentlest experience for your baby’s skin. Every stitch is made with love and care.</p>
+  </section>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+  <!-- Categories -->
+  <section class="p-8 bg-pastel-green bg-opacity-20">
+    <h2 class="text-2xl font-bold text-center mb-6">Top Categories</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="bg-white p-4 rounded-xl shadow">👕 Onesies</div>
+      <div class="bg-white p-4 rounded-xl shadow">👗 Frocks</div>
+      <div class="bg-white p-4 rounded-xl shadow">🍼 Bibs</div>
+      <div class="bg-white p-4 rounded-xl shadow">🛏️ Swaddles</div>
+    </div>
+  </section>
+
+  <!-- Best Sellers -->
+  <section class="p-8">
+    <h2 class="text-2xl font-bold text-center mb-6">Best Sellers</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-xl shadow p-4 text-center">
+        <img src="https://via.placeholder.com/200x200" class="mx-auto mb-4" alt="product" />
+        <p class="font-semibold">Floral Frock</p>
+        <p class="text-sm text-gray-500">100% Organic Cotton</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 text-center">
+        <img src="https://via.placeholder.com/200x200" class="mx-auto mb-4" alt="product" />
+        <p class="font-semibold">Soft Onesie with Quote</p>
+        <p class="text-sm text-gray-500">“Cuddle Me Soft” Edition</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-4 text-center">
+        <img src="https://via.placeholder.com/200x200" class="mx-auto mb-4" alt="product" />
+        <p class="font-semibold">Tiny Tots Swaddle</p>
+        <p class="text-sm text-gray-500">Ultra Breathable Cotton</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="bg-pastel-green p-8 text-white text-center">
+    <h2 class="text-2xl font-bold mb-4">What Parents Say</h2>
+    <p>“Absolutely love the softness and design! My baby sleeps better in PureTots 💕” - Ananya</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white p-4 text-center text-sm text-gray-500">
+    © 2025 PureTots. Made with love for your little ones.
+  </footer>
+
+</body>
 </html>
