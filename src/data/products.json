@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Baby Girl's Frock",
+    "description": "Soft cotton frock with floral threadwork.",
+    "price": 18.99,
+    "image": "/images/girls_frock.png",
+    "gender": "girl"
+  },
+  {
+    "id": 2,
+    "name": "Baby Boy's Onesie",
+    "description": "Organic cotton onesie with button closure.",
+    "price": 16.49,
+    "image": "/images/boys_onesie.png",
+    "gender": "boy"
+  }
+]
