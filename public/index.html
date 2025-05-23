@@ -1,71 +1,187 @@
-<!-- index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PureTots - Organic Baby Clothing</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-beige font-sans text-gray-700">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PureTots – Organic Baby Clothing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: 'Quicksand', sans-serif;
+      }
+    </style>
+  </head>
+  <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
 
-  <!-- Hero Section -->
-  <section class="bg-pastel-green p-8 text-center">
-    <h1 class="text-4xl font-bold text-white">PureTots</h1>
-    <p class="text-xl mt-2 text-white">Soft, Safe & Organic Clothing for Your Little One 🌿</p>
-    <button class="mt-4 bg-white text-pastel-green font-semibold px-6 py-2 rounded-2xl shadow">Shop Now</button>
-  </section>
+  <body class="bg-[#C3E4CD] text-[#4b6043]">
+    <header class="text-center py-6">
+      <img src="logo.png" alt="PureTots Logo" class="h-20 mx-auto" />
+      <h1 class="text-4xl font-bold">PureTots</h1>
+    </header>
 
-  <!-- Our Story -->
-  <section class="p-8 bg-white text-center">
-    <h2 class="text-2xl font-bold mb-2">Why PureTots?</h2>
-    <p class="max-w-xl mx-auto text-gray-600">We use 100% organic cotton with baby-safe dyes to ensure the gentlest experience for your baby’s skin. Every stitch is made with love and care.</p>
-  </section>
+    <main class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-semibold">Featured Products</h2>
+        <button id="cart-btn" class="relative bg-[#4b6043] text-white px-4 py-2 rounded">
+          🛒 Cart <span id="cart-count" class="bg-red-500 rounded-full px-2 absolute -top-2 -right-2 text-xs">0</span>
+        </button>
+      </div>
+      <div class="text-right mb-4">
+        <button onclick="toggleSizeGuide()" class="text-sm underline text-[#4b6043] hover:text-[#2c3a28]">
+          📏 View Size & Weight Guide
+        </button>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="product-list">
+        <!-- Products will be injected here -->
+      </div>
+    </main>
 
-  <!-- Categories -->
-  <section class="p-8 bg-pastel-green bg-opacity-20">
-    <h2 class="text-2xl font-bold text-center mb-6">Top Categories</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-      <div class="bg-white p-4 rounded-xl shadow">👕 Onesies</div>
-      <div class="bg-white p-4 rounded-xl shadow">👗 Frocks</div>
-      <div class="bg-white p-4 rounded-xl shadow">🍼 Bibs</div>
-      <div class="bg-white p-4 rounded-xl shadow">🛏️ Swaddles</div>
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+      <div class="bg-white p-6 rounded-lg w-11/12 md:w-2/3 lg:w-1/2 max-h-[80vh] overflow-y-auto">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-bold">Your Cart</h3>
+          <button onclick="toggleCart()" class="text-red-600 text-lg font-bold">✖</button>
+        </div>
+        <ul id="cart-items" class="space-y-4"></ul>
+        <div class="mt-4 text-right font-semibold">
+          Total: $<span id="cart-total">0</span>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <!-- Best Sellers -->
-  <section class="p-8">
-    <h2 class="text-2xl font-bold text-center mb-6">Best Sellers</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-xl shadow p-4 text-center">
-        <img src="https://via.placeholder.com/200x200" class="mx-auto mb-4" alt="product" />
-        <p class="font-semibold">Floral Frock</p>
-        <p class="text-sm text-gray-500">100% Organic Cotton</p>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 text-center">
-        <img src="https://via.placeholder.com/200x200" class="mx-auto mb-4" alt="product" />
-        <p class="font-semibold">Soft Onesie with Quote</p>
-        <p class="text-sm text-gray-500">“Cuddle Me Soft” Edition</p>
-      </div>
-      <div class="bg-white rounded-xl shadow p-4 text-center">
-        <img src="https://via.placeholder.com/200x200" class="mx-auto mb-4" alt="product" />
-        <p class="font-semibold">Tiny Tots Swaddle</p>
-        <p class="text-sm text-gray-500">Ultra Breathable Cotton</p>
-      </div>
+    <script>
+      function toggleSizeGuide() {
+  document.getElementById("size-guide-modal").classList.toggle("hidden");
+}
+
+const products = [
+  {
+    id: 1,
+    name: "Organic Cotton Onesie",
+    price: 16.49,
+    image: "https://via.placeholder.com/200x200?text=Onesie",
+  },
+  {
+    id: 2,
+    name: "Floral Frock",
+    price: 18.99,
+    image: "https://via.placeholder.com/200x200?text=Frock",
+  },
+  {
+    id: 3,
+    name: "Soft Pajama Set",
+    price: 24.99,
+    image: "https://via.placeholder.com/200x200?text=Pajama",
+  },
+];
+
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      function updateCartDisplay() {
+        document.getElementById("cart-count").textContent = cart.length;
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
+
+      function renderProducts() {
+        const container = document.getElementById("product-list");
+        products.forEach((product) => {
+          const div = document.createElement("div");
+          div.className = "bg-white p-4 rounded-lg shadow-lg text-center";
+          div.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" class="mx-auto mb-4 w-full h-40 object-cover rounded"/>
+            <h3 class="text-lg font-bold">${product.name}</h3>
+            <p class="mb-2">$${product.price}</p>
+            <button onclick="addToCart(${product.id})" class="bg-[#4b6043] text-white px-4 py-2 rounded hover:bg-[#3a4f36]">
+              Add to Cart
+            </button>
+          `;
+          container.appendChild(div);
+        });
+      }
+
+      function addToCart(id) {
+        const item = products.find((p) => p.id === id);
+        cart.push(item);
+        updateCartDisplay();
+      }
+
+      function toggleCart() {
+        document.getElementById("cart-modal").classList.toggle("hidden");
+        renderCartItems();
+      }
+
+      function removeFromCart(index) {
+        cart.splice(index, 1);
+        updateCartDisplay();
+        renderCartItems();
+      }
+
+      function renderCartItems() {
+        const list = document.getElementById("cart-items");
+        list.innerHTML = "";
+        let total = 0;
+        cart.forEach((item, i) => {
+          total += item.price;
+          const li = document.createElement("li");
+          li.className = "flex justify-between items-center border-b pb-2";
+          li.innerHTML = `
+            <span>${item.name} – ₹${item.price}</span>
+            <button onclick="removeFromCart(${i})" class="text-red-500">Remove</button>
+          `;
+          list.appendChild(li);
+        });
+        document.getElementById("cart-total").textContent = total;
+      }
+
+      document.getElementById("cart-btn").addEventListener("click", toggleCart);
+
+      renderProducts();
+      updateCartDisplay();
+    </script>
+    <!-- Size Guide Modal -->
+<div id="size-guide-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white p-6 rounded-lg w-11/12 md:w-2/3 lg:w-1/3">
+    <div class="flex justify-between items-center mb-4">
+      <h3 class="text-xl font-bold text-[#4b6043]">Size & Weight Guide</h3>
+      <button onclick="toggleSizeGuide()" class="text-red-600 text-lg font-bold">✖</button>
     </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="bg-pastel-green p-8 text-white text-center">
-    <h2 class="text-2xl font-bold mb-4">What Parents Say</h2>
-    <p>“Absolutely love the softness and design! My baby sleeps better in PureTots 💕” - Ananya</p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-white p-4 text-center text-sm text-gray-500">
-    © 2025 PureTots. Made with love for your little ones.
-  </footer>
-
-</body>
+    <table class="w-full text-sm border border-gray-300 text-left">
+      <thead class="bg-[#C3E4CD]">
+        <tr>
+          <th class="px-2 py-1 border">Age</th>
+          <th class="px-2 py-1 border">Weight</th>
+          <th class="px-2 py-1 border">Recommended Size</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="px-2 py-1 border">0-3 months</td>
+          <td class="px-2 py-1 border">2.5 – 5.5 kg</td>
+          <td class="px-2 py-1 border">Newborn</td>
+        </tr>
+        <tr>
+          <td class="px-2 py-1 border">3-6 months</td>
+          <td class="px-2 py-1 border">5.5 – 7.5 kg</td>
+          <td class="px-2 py-1 border">Small</td>
+        </tr>
+        <tr>
+          <td class="px-2 py-1 border">6-12 months</td>
+          <td class="px-2 py-1 border">7.5 – 10 kg</td>
+          <td class="px-2 py-1 border">Medium</td>
+        </tr>
+        <tr>
+          <td class="px-2 py-1 border">12-18 months</td>
+          <td class="px-2 py-1 border">10 – 12 kg</td>
+          <td class="px-2 py-1 border">Large</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </body>
 </html>

@@ -7,8 +7,20 @@ const Cart = ({ cartItems, onRemove, onCheckout }) => {
 
   return (
     <div className="p-4 bg-white shadow rounded">
-      <h2 className="text-xl font-semibold mb-4">Cart</h2>
-      {cartItems.length === 0 ? (
+<h2 className="text-xl font-semibold text-[#4b6043] mb-4">Your Cart</h2>
+<div className="text-right mt-4">
+  <p className="text-lg font-bold">Total: ${totalPrice.toFixed(2)}</p>
+  <a
+    href="https://docs.google.com/forms/d/e/1FAIpQLSeyG7W6F3JbS6FzK3G4nM4XlTNzV1ZnJ8B1zD6WvJwz8WAZFg/viewform"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <button className="bg-[#4b6043] text-white px-6 py-2 rounded mt-2 hover:bg-[#3a4e36]">
+      Place Order
+    </button>
+  </a>
+</div>
+{cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
         <div>

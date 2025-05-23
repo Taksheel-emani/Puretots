@@ -1,18 +1,20 @@
 [
   {
     "id": 1,
-    "name": "Baby Girl's Frock",
-    "description": "Soft cotton frock with floral threadwork.",
-    "price": 18.99,
-    "image": "/images/girls_frock.png",
-    "gender": "girl"
+    "name": "Organic Cotton Onesie",
+    "price": 16.49,
+    "image": "https://i.imgur.com/U6tTOJ5.png"
   },
   {
     "id": 2,
-    "name": "Baby Boy's Onesie",
-    "description": "Organic cotton onesie with button closure.",
-    "price": 16.49,
-    "image": "/images/boys_onesie.png",
-    "gender": "boy"
+    "name": "Floral Frock",
+    "price": 18.99,
+    "image": "https://i.imgur.com/63um3Lt.png"
+  },
+  {
+    "id": 3,
+    "name": "Soft Pajama Set",
+    "price": 24.99,
+    "image": "https://i.imgur.com/zn1FbAB.png"
   }
 ]
